@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Check if the correct number of arguments is provided
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 <input_markdown_file>"
+    exit 1
+fi
+
+# Extract the input filename with the .md extension
+input_file="$1"
+
+# Remove the .md extension to get the output filename
+output_file="${input_file%.md}.docx"
+
+# Convert Markdown to DOCX
+pandoc -f markdown -t docx "$input_file" -o "$output_file"
+
+echo "Conversion complete! Output file: $output_file"
