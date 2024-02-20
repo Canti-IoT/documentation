@@ -1,1 +1,0 @@
-# Analiza domeniului de studiu
