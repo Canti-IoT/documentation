@@ -29,15 +29,16 @@ For deleting an alarm:
 
     Byte 0: 0xD{0..2}
 
+For time configuration:
+    
+    Byte 0: 0xEE
+    Byte 3-10: UNIXTIME. If not set, these values will be read in the next cycle.
 
 | **Command**              | **Byte 0** | **Byte 1** | **Bytes 2**      | **Bytes 3,4,5,6**       | **Bytes 7,8,9,10**      |
 | ------------------------ | ---------- | ---------- | ---------------- | ----------------------- | ----------------------- |
 | Recurrence Configuration | 0xF1       | Parameter  |                  | Recurrence              |                         |
-|                          |            | Index      |                  | Value                   |                         |
 | Resetting to Default     | 0xF2       | Parameter  |                  |                         |                         |
-|                          |            | Index      |                  |                         |                         |
 | Alarm Setting            | 0xA{0..2}  | Parameter  | Type of Interval | Lower value of interval | of interval Upper value |
-|                          |            | Index      | type             | value                   | value                   |
 | Disabling an Alarm       | 0xB{0..2}  |            |                  |                         |                         |
-|                          |            |            |                  |                         |                         |
 | Deleting an Alarm        | 0xD{0..2}  |            |                  |                         |                         |
+| Time configuration       | 0xEE       |            |                  | UNIXTIME                | UNIXTIME                |
