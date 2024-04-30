@@ -1,3 +1,4 @@
+git log --pretty=format:"%s" | grep -oP '(feat|fix|docs|style|chore|refactor|test)(?=:)' | sort | uniq -c
 ### [Components](https://www.conventionalcommits.org/en/v1.0.0/):
 - `<type>`: Describes the kind of change being made.
   - `feat`: A new feature for the user or the application.
